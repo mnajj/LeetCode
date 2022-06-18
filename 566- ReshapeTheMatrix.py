@@ -1,3 +1,4 @@
+# straightforward
 class Solution:
     def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
         m = len(mat)
@@ -19,4 +20,22 @@ class Solution:
                 counter += 1
             reshaped_mat.append(row)
             row = []
+        return reshaped_mat
+
+ # Effective
+ class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        m = len(mat)
+        n = len(mat[0])
+        k = 0
+
+        if m*n != r*c:
+            return mat
+
+        reshaped_mat = []
+        for i in range(0, r):
+            reshaped_mat.append([])
+            for j in range(0, c):
+                reshaped_mat[i].append(mat[int(k/m)][int(k % m)])
+                k += 1
         return reshaped_mat
