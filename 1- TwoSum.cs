@@ -1,20 +1,10 @@
-public class Solution
-{
-	public int[] TwoSum(int[] nums, int target)
-	{
-		var dict = new Dictionary<int, int>();
-		for (int i = 0; i < nums.Length; i++)
-		{
-			int num = target - nums[i];
-			if (dict.ContainsKey(num) && dict[num] != i)
-			{
-				return new int[]
-				{
-					dict[num], i
-				};
-			}
-			dict[nums[i]] = i;
-		}
-		return null;
-	}
-}
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dict = {}
+        for i in range(0, len(nums)):
+            num = target - nums[i]
+            if num in dict and dict[num] != i:
+                return [dict[num], i]
+            dict[nums[i]] = i
+        return None
+	
