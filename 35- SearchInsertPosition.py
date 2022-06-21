@@ -11,8 +11,5 @@ class Solution:
             else:
                 return mid
         mid = len(nums) // 2
-        if low < mid:
-            return low
-        else:
-            return high + 1
+        return high + 1
           
