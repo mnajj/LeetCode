@@ -61,3 +61,30 @@ public class Solution
 		return maxSub; 
 	}
 }
+
+
+
+public class Solution
+{
+	public int LengthOfLongestSubstring(string s)
+	{
+		var n = s.Length;
+		var maxSub = 0;
+		var dic = new Dictionary<char, int>();
+		var start = 0;
+
+		for (int i = 0; i < n; i++)
+		{
+			var c = s[i];
+			if (dic.ContainsKey(c))
+			{
+				start = Math.Max(start, dic[c] + 1);
+			}
+
+			maxSub = Math.Max(maxSub, i - start + 1);
+			dic[c] = i;
+		}
+
+		return maxSub;
+	}
+}
