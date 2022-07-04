@@ -34,3 +34,30 @@ public class Solution
 		return maxLen;
 	}
 }
+
+
+
+public class Solution
+{
+	public int LengthOfLongestSubstring(string s)
+	{
+		var n = s.Length;
+		var maxSub = 0;
+		var charIdxDic = new Dictionary<int, int>();
+		for (int i = 0; i < n; i++)
+		{
+			var c = s[i];
+			if (charIdxDic.ContainsKey(c))
+			{
+				i = charIdxDic[c];
+				charIdxDic.Clear();
+			}
+			else
+			{
+				charIdxDic.Add(c, i);
+				maxSub = Math.Max(charIdxDic.Count, maxSub);
+			}
+		}
+		return maxSub; 
+	}
+}
