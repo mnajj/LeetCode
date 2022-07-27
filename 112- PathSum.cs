@@ -1,8 +1,6 @@
 
 public class Solution
 {
-	private static int _levelSum;
-
 	public bool HasPathSum(TreeNode? root, int targetSum)
 	{
 		if (root == null) return false;
