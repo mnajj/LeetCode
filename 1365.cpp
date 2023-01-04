@@ -1,5 +1,5 @@
 /*
-* N*log(N)
+* n*log(n)
 */
 class Solution {
 public:
@@ -23,7 +23,7 @@ public:
 };
 
 /*
-* N
+* n
 */
 class Solution {
 public:
