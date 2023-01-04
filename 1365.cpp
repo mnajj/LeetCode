@@ -25,3 +25,21 @@ public:
 /*
 * N
 */
+class Solution {
+public:
+    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+        int c[101] = {0};
+        vector<int> res(nums.size(), 0);
+        for (int i = 0; i < nums.size(); i++) {
+            ++c[nums[i]];
+        }
+        for (int i = 1; i <= 100; i++) {
+            c[i] += c[i - 1];    
+        }
+        for (int i = 0; i < nums.size(); i++) {
+            if (!nums[i]) continue;
+            res[i] = c[nums[i] - 1];
+        }
+        return res;                       
+    }
+};
