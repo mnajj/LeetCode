@@ -1,10 +1,9 @@
 type MinStack struct {
-	topIdx     int
 	stack, min []int
 }
 
 func Constructor() MinStack {
-	return MinStack{topIdx: -1, stack: []int{}, min: []int{}}
+	return MinStack{stack: []int{}, min: []int{}}
 }
 
 func (s *MinStack) Push(val int) {
