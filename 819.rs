@@ -3,6 +3,7 @@ use std::collections::HashMap;
 impl Solution {
     pub fn most_common_word(paragraph: String, banned: Vec<String>) -> String {
         let paragraph = paragraph
+            .to_lowercase()
             .chars()
             .map(|c| {
                 if c.is_alphabetic() || c.is_whitespace() {
@@ -11,8 +12,7 @@ impl Solution {
                     ' '
                 }
             })
-            .collect::<String>()
-            .to_lowercase();
+            .collect::<String>();
         let mut map: HashMap<&str, i32> = HashMap::new();
         for word in paragraph.split_whitespace() {
             if !banned.contains(&word.to_owned()) {
