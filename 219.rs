@@ -10,7 +10,7 @@ impl Solution {
         for (_, v) in map {
             for i in 0..v.len() {
                 for j in i + 1..v.len() {
-                    if ((v[i] - v[j]) as i32).abs() <= k {
+                    if (v[i] - v[j]).abs() <= k {
                         return true;
                     }
                 }
